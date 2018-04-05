@@ -5,6 +5,7 @@ var app = express();
 
 app.use(bodyParser.json());
 
+// handle post
 app.post('/', function(req, res) {
     console.log(req.body); // your JSON
 
@@ -24,8 +25,6 @@ app.post('/', function(req, res) {
     //image - corresponding to image/showImage from the request payload
     //slug
     //title
-
-
     response = [];
     for (i = 0; i < result.length; i++) {
 
@@ -36,11 +35,18 @@ app.post('/', function(req, res) {
         });
     }
 
-    var response = JSON.stringify({ response });
+    res.status(200).send(JSON.stringify({ response }));
 
-
-
-    res.send(response); // echo the result back
 });
 
-app.listen(3000); // your JSON
+// handle errors
+app.use((err, req, res, next) => {
+    if (err instanceof SyntaxError) return res.status(400).send(JSON.stringify({
+        error: "Could not decode request: JSON parsing failed"
+    }))
+
+    console.error(err);
+    res.status(500).send();
+});
+
+app.listen(3000, () => console.log("Running!"));
