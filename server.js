@@ -1,9 +1,11 @@
 var express = require('express'),
 bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3000
-
 
 var app = express();
+
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 3000;
+
 
 app.use(bodyParser.json());
 
