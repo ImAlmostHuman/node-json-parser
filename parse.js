@@ -1,9 +1,6 @@
 var express = require('express'),
 bodyParser = require('body-parser');
-var port = process.env.PORT || 3000;
-app.listen(port, "0.0.0.0", function() {
-console.log("Listening on Port 3000");
-});
+const PORT = process.env.PORT || 3000
 
 
 var app = express();
