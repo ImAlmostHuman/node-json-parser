@@ -1,16 +1,17 @@
 {
   "name": "node",
-  "version": "1.0.0",
-  "description": "",
+  "version": "8.9.0",
+  "description": "node json parser",
   "main": "parse.js",
   "scripts": {
+    "start": "node parse.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ImAlmostHuman/node-json-parser.git"
   },
-  "author": "",
+  "author": "Tom Ulman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ImAlmostHuman/node-json-parser/issues"

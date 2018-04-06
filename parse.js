@@ -5,6 +5,10 @@ var app = express();
 
 app.use(bodyParser.json());
 
+app.get('/', function (req, res) {
+  res.send('Server running, send Json this way!')
+})
+
 // handle post
 app.post('/', function(req, res) {
     console.log(req.body); // your JSON
