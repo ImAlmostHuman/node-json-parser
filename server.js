@@ -52,6 +52,7 @@ app.post('/', function(req, res) {
 
 // handle errors
 app.use((err, req, res, next) => {
+    res.setHeader('Content-Type', 'application/json');
     if (err instanceof SyntaxError) return res.status(400).send(JSON.stringify({
         error: "Could not decode request: JSON parsing failed"
     }))
